@@ -100,7 +100,7 @@ function Spellcaster(name,health,mana){
       if(this.health === 0){
          this.isAlive = false;
       }
-   }
+   };
 
   /**
    * Reduces the spellcaster's mana by `cost`.
@@ -121,7 +121,7 @@ function Spellcaster(name,health,mana){
          return false;
       }
    }
-}
+
   /**
    * Allows the spellcaster to cast spells.
    * The first parameter should either be a `Spell` or `DamageSpell`.
@@ -147,3 +147,17 @@ function Spellcaster(name,health,mana){
    * @param  {Spellcaster} target         The spell target to be inflicted.
    * @return {boolean}                    Whether the spell was successfully cast.
    */
+   this.invoke = function(spell, target) {
+       //Should be called Spell as first parameter
+       if(spell instanceof Spell || spell instanceof DamageSpell){
+           console.log("Successful");
+       
+          return true;
+       } 
+       else{
+           console.log("Unsuccessful");
+           return false;
+       }
+   };
+ 
+}     

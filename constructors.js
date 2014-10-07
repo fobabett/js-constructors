@@ -59,6 +59,8 @@ function DamageSpell(name,cost,damage,description){
    
 }
 
+DamageSpell.prototype = Object.create(Spell.prototype);
+
 var damageSpell = new DamageSpell('Damage Spell', 23, 42, 'Deals damage.');
 Spell.call('Damage Spell', 23, 42, 'Deals damage.');
 /**

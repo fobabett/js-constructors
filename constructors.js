@@ -9,12 +9,22 @@
  * @property {number} cost
  * @property {string} description
  */
+function Spell(name,cost,description){
+   this.name = name;
+   this.cost = cost;
+   this.description = description;
+}
+
 
   /**
    * Print out all spell details and format it nicely.
    * The format doesnt matter, as long as it contains the spell name, cost, and description.
    * @name printDetails
    */
+var fireball = new Spell('Fireball', 5, 'Conjures a ball of fire.');
+
+
+
 
 /**
  * A spell that deals damage.

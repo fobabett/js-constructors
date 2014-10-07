@@ -54,9 +54,13 @@ var iceblast = new Spell('Ice Blast', 15, 'Creates a blast of ice, freezing any 
  * @property {number} damage
  */
 function DamageSpell(name,cost,damage,description){
-   Spell.call(this,name,cost);
-   this.mana = mana;
+   Spell.call(this,name,cost,description);
+   this.damage = damage;
+   
 }
+
+var damageSpell = new DamageSpell('Damage Spell', 23, 42, 'Deals damage.');
+Spell.call('Damage Spell', 23, 42, 'Deals damage.');
 /**
  * Now that you've created some spells, let's create
  * `Spellcaster` objects that can use them!

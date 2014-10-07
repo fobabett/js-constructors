@@ -13,7 +13,7 @@ function Spell(name,cost,description){
    this.name = name;
    this.cost = cost;
    this.description = description;
-}
+
 
    
 
@@ -24,8 +24,12 @@ function Spell(name,cost,description){
    * The format doesnt matter, as long as it contains the spell name, cost, and description.
    * @name printDetails
    */
-
-
+   this.printDetails = function() {
+      console.log(name);
+      console.log(cost);
+      console.log(description);
+   };
+}
 
 
 /**

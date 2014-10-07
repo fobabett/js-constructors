@@ -26,6 +26,9 @@ var fireball = new Spell('Fireball', 5, 'Conjures a ball of fire.');
 
 
 
+var iceblast = new Spell('Ice Blast', 15, 'Creates a blast of ice, freezing any living thing where it stands.');
+
+
 /**
  * A spell that deals damage.
  * We want to keep this code DRY (Don't Repeat Yourself).
@@ -50,7 +53,10 @@ var fireball = new Spell('Fireball', 5, 'Conjures a ball of fire.');
  * @property {number} mana
  * @property {number} damage
  */
-
+function DamageSpell(name,cost,damage,description){
+   Spell.call(this,name,cost);
+   this.mana = mana;
+}
 /**
  * Now that you've created some spells, let's create
  * `Spellcaster` objects that can use them!

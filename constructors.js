@@ -149,15 +149,15 @@ function Spellcaster(name,health,mana){
    */
    this.invoke = function(spell, target) {
        //Should be called Spell as first parameter
-       if(spell instanceof Spell || spell instanceof DamageSpell){
-           console.log("Successful");
-       
+      if(spell instanceof Spell || spell instanceof DamageSpell){
+         this.mana = this.mana - spell.cost;
+
           return true;
-       } 
-       else{
-           console.log("Unsuccessful");
-           return false;
-       }
+      } 
+      else{
+
+         return false;
+      }
    };
  
 }     

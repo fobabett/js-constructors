@@ -15,18 +15,17 @@ function Spell(name,cost,description){
    this.description = description;
 }
 
+   
+
+
 
   /**
    * Print out all spell details and format it nicely.
    * The format doesnt matter, as long as it contains the spell name, cost, and description.
    * @name printDetails
    */
-var fireball = new Spell('Fireball', 5, 'Conjures a ball of fire.');
 
 
-
-
-var iceblast = new Spell('Ice Blast', 15, 'Creates a blast of ice, freezing any living thing where it stands.');
 
 
 /**
@@ -81,7 +80,7 @@ function Spellcaster(name,health,mana){
    this.health = health;
    this.mana = mana;
    this.isAlive = true;
-}
+
   /**
    * The spellcaster loses health equal to `damage`.
    * Health should never be negative.
@@ -91,7 +90,10 @@ function Spellcaster(name,health,mana){
    * @name inflictDamage
    * @param  {number} damage  Amount of damage to deal to the spellcaster
    */
+   this.inflictDamage = function(damge){
 
+   }
+}
   /**
    * Reduces the spellcaster's mana by `cost`.
    * Mana should only be reduced only if there is enough mana to spend.

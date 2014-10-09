@@ -25,11 +25,11 @@ function Spell(name,cost,description){
    * @name printDetails
    */
    this.printDetails = function() {
-      console.log(name);
-      console.log(cost);
-      console.log(description);
+    console.log(this.name + " " + this.cost + " " + this.description);
    };
+
 }
+
 
 
 /**
@@ -153,7 +153,7 @@ function Spellcaster(name,health,mana){
    */
    this.invoke = function(spell, target) {
        //Should be called Spell as first parameter
-      if(spell instanceof Spell || spell instanceof DamageSpell){
+      if(spell instanceof Spell){
 
          if(this.mana >= spell.cost){
             this.mana = this.mana - spell.cost;
@@ -172,4 +172,4 @@ function Spellcaster(name,health,mana){
       }
    };
  
-}     
+} 

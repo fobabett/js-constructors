@@ -25,7 +25,7 @@ function Spell(name,cost,description){
    * @name printDetails
    */
    this.printDetails = function() {
-    console.log("%s %d %s",this.name,this.cost,this.description); 
+    console.log(this.name + " " + this.cost + " " + this.description); 
    };
 
 }
@@ -154,21 +154,26 @@ function Spellcaster(name,health,mana){
    this.invoke = function(spell, target) {
        
       if(spell instanceof DamageSpell || spell instanceof Spell){
-         if(this.spendMana(spell.cost)){ //subtracts cost from mana
-            if(spell instanceof DamageSpell){
-               target.inflictDamage(spell.damage);
-            }
+        if(this.mana>=spell.cost){ //subtracts cost from mana
+          if(spell instanceof DamageSpell){
+            if(!(target instanceof Spellcaster)){
 
-            return true;
-         }
-         else{ //not enough mana to cast spell
-            return false;
-         }
-      } 
+              return false;
+            }
+            target.inflictDamage(spell.damage);
+
+          }
+          this.spendMana(spell.cost);
+          return true;
+        }
+          else{ //not enough mana to cast spell
+          return false;
+      }
+    }
       else{ //spell is not really a spell
 
-         return false;
+        return false;
       }
-   };
+  };
  
 } 

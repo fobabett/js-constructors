@@ -25,7 +25,7 @@ function Spell(name,cost,description){
    * @name printDetails
    */
    this.printDetails = function() {
-    console.log(this.name + " " + this.cost + " " + this.description);
+    console.log("%s %d %s",this.name,this.cost,this.description); 
    };
 
 }
@@ -57,7 +57,7 @@ function Spell(name,cost,description){
  * @property {number} damage
  */
 function DamageSpell(name,cost,damage,description){
-   Spell.call(this,name,cost,description);
+   Spell.call(this,name,cost,description); 
    this.damage = damage;
    
 }

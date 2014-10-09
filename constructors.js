@@ -153,10 +153,12 @@ function Spellcaster(name,health,mana){
    */
    this.invoke = function(spell, target) {
        //Should be called Spell as first parameter
-      if(spell instanceof Spell){
+      if(spell instanceof DamageSpell && target instanceof Spellcaster){
 
          if(this.mana >= spell.cost){
-            this.mana = this.mana - spell.cost;
+            if(target.health >= spell.damage){
+               this.mana = this.mana - spell.cost;
+            }
          }
 
          else{

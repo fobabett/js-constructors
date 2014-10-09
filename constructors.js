@@ -153,18 +153,18 @@ function Spellcaster(name,health,mana){
    */
    this.invoke = function(spell, target) {
        
-      if(spell instanceof DamageSpell && target instanceof Spellcaster){
+      if(spell instanceof Spell && target instanceof Spellcaster){
 
          if(this.mana >= spell.cost && target.health >= spell.damage){ //if there's enough mana to cast spell and health is greater than damage
-            this.mana = this.mana - spell.cost; //subtracts cost from mana
+            this.spendMana(spell.cost); //subtracts cost from mana
+
+         return true;
          }
 
          else{
 
             return false;
          }
-
-          return true;
       } 
       else{
 

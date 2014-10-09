@@ -152,13 +152,11 @@ function Spellcaster(name,health,mana){
    * @return {boolean}                    Whether the spell was successfully cast.
    */
    this.invoke = function(spell, target) {
-       //Should be called Spell as first parameter
+       
       if(spell instanceof DamageSpell && target instanceof Spellcaster){
 
-         if(this.mana >= spell.cost){
-            if(target.health >= spell.damage){
-               this.mana = this.mana - spell.cost;
-            }
+         if(this.mana >= spell.cost && target.health >= spell.damage){ //if there's enough mana to cast spell and health is greater than damage
+            this.mana = this.mana - spell.cost; //subtracts cost from mana
          }
 
          else{
